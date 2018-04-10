@@ -1,0 +1,1211 @@
+@import 'reset';
+@import 'base';
+// @import 'bootstrap.min';
+@import 'aos';
+
+@import 'button';
+@import 'mixins';
+// @import 'neat';
+@import "gridle/gridle";// Import gridle
+
+// animation
+
+@import 'core';
+@import 'easing';
+@import 'animations';
+
+@import 'swiper';
+
+
+// setting up the grid
+@include gridle_setup( (
+    context : 12,
+    gutter-width : 20px,
+    // direction : rtl,
+    // etc...
+) );
+
+.display-desktop{
+  display: block;
+}
+.display-mobile{
+  display: none;
+}
+
+// make the use of media queries really easy
+@include gridle_register_state ( mobile , (
+    max-width : 480px
+) );
+@include gridle_register_state ( tablet , (
+    min-width : 481px,
+    max-width : 1024px
+) ) ;
+
+// even with full custom queries :
+@include gridle_register_state ( landscape, (
+    query : "(orientation : landscape)"
+) );
+
+
+// @import 'gridle/settings';
+
+// generate classes :
+// @include gridle_generate_classes ( );
+
+// manage container width :
+
+.header-internal{
+  // background: red;
+
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1b1fb3+0,2989d8+50,1e5799+99 */
+  background: #1b1fb3; /* Old browsers */
+
+  @include gradient-angle();
+
+
+  &-image{
+    background: url('/images/header/school-appointments.png') no-repeat;
+    background-size: auto 100% ;
+    background-position: 94% center ;
+    padding: 50px 0;
+    margin-bottom: 20px;
+
+    @include gridle_state ( mobile ) {
+      padding: 10px 0 8px 0;
+      background-position: 180% center;
+      // height: 54px;
+    }
+
+
+    @include gridle_state ( tablet ) {
+      background-position: 143% center;
+      padding: 30px 0;
+    }
+
+    .container{
+
+      @include gridle_state ( mobile ) {
+        padding-top: 11px;
+
+      }
+
+    }
+  }
+
+  &.hot{
+    @include gradient-angle(#006738,#1B8E1E, #006738);
+
+    .header-internal-image{
+      background-image: url('/images/header/hot-lunches.png');
+      background-repeat: none;
+      background-size: auto 100% ;
+      background-position: right center ;
+        @include gridle_state ( tablet) {
+          background-position: 100% center;
+        }
+        @include gridle_state ( mobile) {
+          background-position: 270% center;
+        }
+
+
+
+    }
+  }
+  &.locker{
+    @include gradient-angle(#F1592A,#E28C28, #F1592A);
+
+    .header-internal-image{
+      background-image: url('/images/header/locker.png');
+      background-repeat: none;
+      background-size: auto 100% ;
+      background-position: right center ;
+        @include gridle_state ( tablet) {
+          background-position: 100% center;
+        }
+        @include gridle_state ( mobile) {
+          background-position: 270% center;
+        }
+    }
+  }
+  &.appazur{
+    @include gradient-angle(#00A4E1,#0e99cc, #00A4E1);
+
+    .header-internal-image{
+      background-image: url('/images/header/appazur.png');
+
+      background-repeat: none;
+      background-size: auto 100% ;
+      background-position: right center ;
+        @include gridle_state ( tablet) {
+          background-position: 100% center;
+        }
+        @include gridle_state ( mobile) {
+          background-position: 270% center;
+        }
+    }
+  }
+
+  &.weekly-planner{
+    @include gradient-angle(rgb(173, 201, 182),#0e8a2b, rgb(173, 201, 182));
+
+    .header-internal-image{
+      background-image: url('/images/header/Weekly-Planner.png');
+
+      background-repeat: none;
+      background-size: auto 100% ;
+      background-position: right center ;
+        @include gridle_state ( tablet) {
+          background-position: 100% center;
+        }
+        @include gridle_state ( mobile) {
+          background-position: 100% center;
+          background-size: auto 130%;
+        }
+    }
+  }
+
+  &.key-manager{
+    @include gradient-angle(#a3cadb ,#6a8b98, #9bc1d0);
+
+    .header-internal-image{
+      background-image: url('/images/header/Key-Manager.png');
+
+      background-repeat: none;
+      background-size: auto 100% ;
+      background-position: right center ;
+        @include gridle_state ( tablet) {
+          background-position: 100% center;
+        }
+        @include gridle_state ( mobile) {
+          background-position: 100% center;
+          background-size: auto 130%;
+        }
+    }
+  }
+
+
+  &.counsellor{
+    @include gradient-angle(#F6851F,#F6851F, #df791d);
+
+    .header-internal-image{
+
+      background-image: url('/images/header/counsellor.png');
+      // background-image: url('/images/header/student-signup.png');
+
+      background-size: auto 100% ;
+      background-position: right center ;
+        @include gridle_state ( tablet) {
+          background-position: 100% center;
+        }
+        @include gridle_state ( mobile) {
+          background-position: 270% center;
+        }
+    }
+  }
+  &.tracking{
+    @include gradient-angle(#6750A1,#6750A1, #6c51af);
+
+    .header-internal-image{
+      background-image: url('/images/header/student.png');
+      background-repeat: none;
+      background-size: auto 100% ;
+      background-position: right center ;
+        @include gridle_state ( tablet) {
+          background-position: 100% center;
+        }
+        @include gridle_state ( mobile) {
+          background-position: 270% center;
+        }
+    }
+  }
+  &.custom{
+    @include gradient-angle(#BE1E2D,#bd3541, #BE1E2D);
+    .header-internal-image{
+      background-image: url('/images/header/student-signup.png');
+
+      background-size: auto 100% ;
+      background-position: right center ;
+        @include gridle_state ( tablet) {
+          background-position: 100% center;
+        }
+        @include gridle_state ( mobile) {
+          background-position: 270% center;
+        }
+    }
+  }
+
+  &.fees{
+    @include gradient-angle(#006738,#006738, #0f814d);
+    .header-internal-image{
+      background-image: url('/images/header/fees.png');
+
+      background-size: auto 100% ;
+      background-position: right center ;
+        @include gridle_state ( tablet) {
+          background-position: 100% center;
+        }
+        @include gridle_state ( mobile) {
+          background-position: 270% center;
+        }
+    }
+  }
+
+  img{
+    height: auto;
+    width: 53px;
+    float: left;
+    margin-right: 23px;
+    margin-left: 10px;
+
+    @include gridle_state ( mobile ) {
+      height: auto;
+      width: 30px;
+      float: left;
+      margin-right: 10px;
+      margin-left: 0px;
+    }
+  }
+
+  .cotainer{
+    text-align: left;
+  }
+
+  h3{
+    color: #e5e5e5;
+    text-align: left;
+    border: solid 1px #f5f5f5f5;
+    display: inline-block;
+    background: #2f2f2fdb;
+    padding: 14px 44px 14px 22px;
+    margin-left: 20px;
+    text-shadow: 1px 1px 1px #0000007d;
+
+    @include gridle_state ( mobile ) {
+      font-size: 23px;
+      padding-right: 20px;
+      text-align: left;
+      margin-left: 0;
+      border: solid 1px #f5f5f594;
+      background: #2f2f2fdb;
+    }
+    @include gridle_state ( tablet) {
+      text-align: left;
+    }
+
+  }
+}
+
+.contact-form{
+  padding: 45px 0;
+  overflow: hidden;
+  h3{
+    // text-align: center;
+  }
+
+  table{
+    width: 100%;
+  }
+  .message-success{
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #8e8a8a;
+    display: inline-block;
+    margin: 0 auto 30px auto;
+    background: white;
+    max-width: 600px;
+  }
+
+  input[type="text"], textarea{
+    padding: 11px 5%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #8e8a8a;
+    width: 90%;
+  }
+  input[type="submit"]{
+    padding: 10px 15px;
+    color: white;
+    background: black;
+    font-size: 16px;
+  }
+}
+
+.content-contact-form{
+  @include gridle_grid (5);
+  @include gridle_state ( mobile ) {
+      @include gridle_grid (12);
+      text-align: center;
+  }
+}
+.content-contact-form-moreinfo{
+  @include gridle_grid (5);
+  text-align: right;
+  padding-right: 25px;
+  @include gridle_state ( mobile ) {
+      @include gridle_grid (12);
+      text-align: center;
+      padding-right: 0px;
+      margin-bottom: 20px;
+  }
+}
+
+
+p{
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.container {
+    max-width : 960px;
+    margin : 0 auto;
+
+
+    .header-internal-image &{
+      @include gridle_state ( tablet) {
+        text-align: left;
+
+      }
+
+    }
+
+    &.internal{
+      padding: 25px 10px;
+
+      @include gridle_state ( tablet) {
+        padding: 25px 10px;
+
+      }
+      overflow: hidden;
+
+      @include gridle_state ( tablet ) {
+          padding: 5px 25px;
+      }
+
+      .content{
+        margin-bottom: 40px;
+        @include gridle_state ( tablet) {
+          padding: 0 20px ;
+        }
+        h3{
+          font-size: 25px;
+          margin-bottom: 2px;
+        }
+      }
+
+      p{
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+          @include gridle_state ( mobile ) {
+            font-size: 13px;
+
+          }
+      }
+
+      .image-content{
+        @include gridle_grid ( 3);
+        text-align: center;
+        margin-bottom: 100px;
+        padding-top: 33px;
+        img{
+          width: 40%;
+          margin: 0 auto;
+
+        }
+      }
+
+      .testimonial{
+
+          background: white;
+          border: solid 2px #549db7;
+          margin: 20px 0 ;
+          overflow: hidden;
+          padding-bottom: 10px;
+          padding: 20px 20px 30px 20px;
+          margin-top: 50px;
+          @include box-shadow(0px, 10px, 42px , rgba(0, 0, 0, 0.25) );
+          ul{
+            @include gridle_grid (10);
+            @include gridle_push (1);
+          }
+
+          li{
+            padding: 20px;
+            margin-bottom: 5px;
+          }
+
+          @include gridle_state ( mobile ) {
+            padding: 10px;
+
+            li{
+              font-size: 13px;
+              padding: 20px 10px;
+            }
+
+            ul{
+              @include gridle_grid (12);
+              @include gridle_push (0);
+            }
+
+          }
+      }
+    }
+
+    ul{
+      margin: 10px 0;
+    }
+
+    @include gridle_state ( mobile ) {
+      padding: 0 25px;
+      text-align: center;
+      .products-panel &{
+        padding: 0 10px;
+      }
+    }
+
+    @include gridle_state ( tablet ) {
+      padding: 0 25px;
+      text-align: center;
+    }
+}
+
+.features{
+  overflow: hidden;
+  ul{
+    margin-bottom: 20px;
+    overflow: hidden;
+
+      @include gridle_state ( mobile ) {
+        overflow: initial;
+      }
+  }
+
+
+  li{
+    padding: 10px 24px 10px 0;
+    float: left;
+    width: 46%;
+    display: block;
+
+    @include gridle_state( tablet ) {
+      width: 43%;
+    }
+  }
+
+  @include gridle_state ( mobile ) {
+    .image-content{
+      width: 100% !important;
+      margin-bottom: 14px !important;
+      padding-top: 0 !important;
+
+    }
+
+    li{
+      width: 100%;
+      font-size: 15px;
+
+      @include gridle_state ( mobile ) {
+        width: 90%;
+        padding: 4%;
+        font-size: 15px;
+        margin-bottom: 24px;
+        border: solid 1px #0a0a0a1f;
+      }
+    }
+
+  }
+
+}
+
+$color-blue-light: #b9e5f6;
+$color-blue-light-2: #9dc2d0;
+$color-blue-dark: #6a8b98;
+$color-grey-dark: #404b53;
+$red : #fc0101;
+$red-light: #fc5757;
+$grey: #404b53;
+
+.SwiperBox2{
+  // @include gridle_grid(12);
+  position: relative;
+  @include gridle_grid ( 12 );
+  // @include gridle_push (  );
+}
+
+.swiper-button-next2, .swiper-button-prev2{
+  position: absolute;
+  top: 40%;
+  width: 19px;
+  height: 30px;
+  z-index: 9999;
+
+
+  display: block;
+}
+.swiper-button-next2{
+  right: 0px ;
+}
+
+.swiper-button-prev2{
+  left: 0px ;
+}
+
+.top-contact{
+  background: black;
+  text-align: right;
+  color: white;
+  font-size: 12px;
+  a.tel{
+    color: white;
+    text-decoration: none;
+  }
+  a.tel:hover,a.tel:focus {
+    color: white;
+
+    }
+
+
+  p{
+    padding: 5px 0;
+    @include gridle_state ( mobile ) {
+      font-size: 14px;
+    }
+  }
+  @include gridle_state ( mobile ) {
+    text-align: center;
+    padding:2px 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+
+body{
+  background: #e5e5e5 url('/images/header-bg-internal.jpg') no-repeat;
+}
+
+#homePage{
+  background: #e5e5e5 url('/images/header-bg.jpg') no-repeat;
+  background-size: 100% 100%;
+}
+
+
+h1, h3{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+
+
+.home-header{
+  // background: url('/images/header-bg.jpg') no-repeat;
+  background-size: 100% 100%;
+  padding: 12px 0 0 0 ;
+  overflow: hidden;
+
+  @include gridle_state ( tablet) {
+    padding: 10px 0 0 0 ;
+  }
+
+  #homePage &{
+    padding: 30px 0 ;
+  }
+
+  h1{
+    font-size: 50px;
+    line-height: 1;
+    margin: 20px 0;
+  }
+
+  p{
+    font-size: 17px;
+  }
+
+  @include gridle_state ( mobile ) {
+    padding: 15px 0 0px 0;
+  }
+
+  .logo{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    @include gridle_grid ( 6 );
+
+
+
+    img{
+      width: 100%;
+
+      @include gridle_state ( mobile ) {
+        width: 80%;
+
+      }
+    }
+
+    @include gridle_state ( mobile ) {
+      text-align: center;
+      padding-top: 10px;
+      @include gridle_grid ( 11 );
+      @include gridle_push(0);
+      padding-right: 20px;
+      padding-bottom: 10px;
+    }
+  }
+
+
+
+  .btn-group{
+    padding: 30px 0;
+  }
+
+  .wrapper-content{
+    @include gridle_row ();
+    position: relative;
+
+    @include gridle_state ( mobile ) {
+      margin: 0 -25px;
+
+    }
+
+    &.internal{
+      .logo{
+        @include gridle_suffix (2 );
+        @include gridle_grid (4 );
+        padding-bottom: 10px;
+
+        @include gridle_state ( mobile ) {
+          @include gridle_suffix (2);
+          @include gridle_grid (10);
+        }
+      }
+    }
+  }
+
+  .navigation-wrapper{
+    @include gridle_state ( mobile ) {
+      margin-bottom: 20px;
+    }
+
+
+  }
+
+  .toglee-nav{
+
+    width: 30px;
+    display: block;
+    position: absolute;
+    top:15px;
+    right: 20px;
+    display: none;
+
+    @include gridle_state ( mobile ) {
+      display: block;
+    }
+
+    span{
+      display: block;
+      height: 3px;
+      background: black;
+      margin-bottom: 5px;
+    }
+  }
+
+  .navigation{
+     @include gridle_grid ( 12 );
+     text-align: left;
+     padding-bottom: 19px;
+
+     .internal &{
+      text-align: left;
+      padding-bottom: 19px;
+     }
+
+
+     @include gridle_state ( mobile ) {
+       display: none;
+
+     }
+
+
+    &.active{
+      display: block;
+    }
+     ul{
+        @include gridle_row ();
+          @include gridle_state ( mobile ) {
+            background: #cacaca;
+            padding: 12px 0;
+
+          }
+       li{
+         display: inline-block;
+         padding: 0 15px;
+         @include gridle_state ( mobile ) {
+           display: block;
+           padding: 0 25px;
+
+         }
+
+         a{
+          @include gridle_state ( mobile ) {
+            display: block;
+            padding: 15px;
+          }
+         }
+       }
+     }
+
+     a{
+       color: black;
+       text-decoration: none;
+       font-weight: normal;
+       &:hover{
+         border-bottom: 1px solid black;
+       }
+     }
+     @include gridle_state ( mobile ) {
+       @include gridle_grid ( 12 );
+        padding-top: 3px;
+     }
+  }
+
+  .image-content{
+     @include gridle_grid ( 6 );
+      @include gridle_state( mobile ) {
+        padding-top: 20px;
+        @include gridle_grid ( 12 );
+      }
+
+    img{
+      width: 100%;
+    }
+
+
+  }
+
+  .navigation-wrapper.internal{
+    .navigation{
+      text-align: left;
+      padding-top: 0px;
+      padding-bottom: 9px;
+    }
+  
+  }
+
+  .text-content{
+    font-weight: 300;
+
+     @include gridle_grid ( 6 );
+
+     @include gridle_state( mobile ) {
+       @include gridle_grid( 12 );
+       h1{
+         font-size: 36px;
+       }
+     }
+  }
+}
+
+.products-panel{
+   @include gradient-vertical(#819faa,#9fc5d3);
+   padding: 40px 0 40px 0;
+   overflow: hidden;
+
+   & #homePage{
+      @include gradient-vertical(#9fc5d3,#b9e5f6);
+   }
+
+   ul{
+     // @include gridle_container();
+     text-align: center;
+
+     span{
+       display: block;
+       float: left;
+       width: 100%;
+     }
+
+
+     li{
+
+         // float: left;
+         display: inline-block;
+         width: 15%;
+         // text-align: center;
+         font-size: 12px;
+         line-height: 1.4;
+         padding: 5px 18px;
+         font-family: 'Open Sans Semi Bold', sans-serif, Arial;
+         font-weight: bolder;
+         // width: 23%;
+         // padding: 5px 3%;
+         background: white;
+         margin: 22px 17px;
+          @include gridle_state( table ) {
+            margin: 11px 5px;
+          }
+         height: 125px;
+         text-align: center;
+         @include box-shadow(0px, 0px, 6px , rgba(0, 0, 0, 0.45) );
+         @include border-radius(8px);
+         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feffff+0,d2ebf9+100;Blue+3D+%2312 */
+         background: #feffff; /* Old browsers */
+         background: -moz-linear-gradient(top, #feffff 0%, #d2ebf9 100%); /* FF3.6-15 */
+         background: -webkit-linear-gradient(top, #feffff 0%,#d2ebf9 100%); /* Chrome10-25,Safari5.1-6 */
+         background: linear-gradient(to bottom, #feffff 0%,#d2ebf9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=0 ); /* IE6-9 */
+          border: 1px solid #fff;
+          transition: all .5s;
+
+         &:hover{
+           @include gradient-angle(#feffff,#d2ebf9, #d2ebf9);
+           border: 1px solid #000;
+         }
+
+        a{
+          color: black;
+          font-family: 'Open Sans Semi Bold', sans-serif, Arial;
+           font-weight: bolder;
+           display: block;
+           height: 100%;
+          overflow: hidden;
+
+
+        }
+
+       img{
+         float: left;
+         // width: 20px;
+         // margin-right: 7px;
+         //  margin-left: 0px;
+         // margin-bottom: 30px;
+         float: none;
+
+         width: 40px;
+         margin: 14px auto;
+          margin-bottom: 10px;
+
+       }
+
+     }
+     // &.line-two{
+     //   li:first-child{
+     //     margin-left: 10%;
+     //   }
+     //
+     // }
+   }
+
+   .products-panel{
+     ul.container{
+        @include gridle_state( mobile ) {
+        padding: 0;
+      }
+     }
+   }
+
+   @include gridle_state( mobile ) {
+
+     ul{
+
+       li{
+         width: 36%;
+         padding: 5px 3%;
+         // background: white;
+         margin: 2%;
+         height: 120px;
+         text-align: center;
+         @include box-shadow(0px, 0px, 4px , rgba(0, 0, 0, 0.45) );
+         @include border-radius(5px);
+
+
+
+
+
+         span{
+           display: block;
+           float: left;
+           width: 100%;
+           @include gridle_state ( mobile ) {
+            font-size: 11px;
+           }
+         }
+
+         img{
+           float: none;
+
+           width: 50px;
+           margin: 10px auto;
+           margin-bottom: 10px;
+         }
+       }
+
+       &.line-two{
+         li:first-child{
+           margin-left: 0;
+         }
+
+       }
+     }
+
+   }
+}
+
+.banner-wrapper{
+  background: url('/images/banner.jpg');
+  text-align: center;
+  height: 400px;
+  font-size: 35px;
+
+
+  h3{
+    color: #414142;
+    background: white;
+    padding: 20px 60px;
+    display: inline-block;
+
+    margin-top: 150px;
+  }
+  .banner-bg1{
+    background: url('/images/comuter-left.png') left top no-repeat;
+    height: 400px;
+    background-size: auto 100% ;
+  }
+
+  .banner-bg2{
+    background: url('/images/phone.png') right bottom no-repeat;
+      height: 400px;
+  }
+
+  @include gridle_state( mobile ) {
+    height: 250px;
+
+    h3{
+      width: 50%;
+      font-size: 22px;
+      padding: 19px 29px;
+      margin-top: 80px;
+    }
+    .banner-bg1{
+      height: 250px;
+      background-size: auto 100% ;
+    }
+    .banner-bg2{
+      height: 250px;
+      background: none;
+    }
+
+  }
+
+
+}
+
+.clientes-panel{
+
+  // @include gradient-vertical(#9fc5d3,#b9e5f6);
+
+  padding: 40px 40px 0 40px;
+  text-align: center;
+  background: #a8cee0 url('/images/clientes-bg.jpg') left top no-repeat;
+  border-bottom: 1px solid white;
+
+  @include gridle_state( mobile ) {
+    padding: 3px;
+  }
+
+  h3{
+    font-size: 60px;
+    margin-bottom: 30px;
+    @include gridle_state( mobile ) {
+        font-size: 32px;
+        margin: 20px 0;
+    }
+  }
+
+
+
+  img{
+    width: 100%;
+  }
+
+  .slider-wrapper{
+    @include gridle_grid ( 8 );
+    @include gridle_push ( 2 );
+
+    @include gridle_state( mobile ) {
+      @include gridle_grid ( 12 );
+      @include gridle_push ( 0 );
+
+    }
+
+
+  }
+
+  .clientes-panel-bg{
+    .container{
+      @include gridle_state( mobile ) {
+        padding: 0 3px;
+
+      }
+
+    }
+  }
+
+  .testimonial-panel{
+    color: white;
+    background: #6a8b98;
+    padding: 30px;
+    margin: 0 20px;
+     // @include gridle_grid ( 12 );
+     // @include gridle_push ( 2 );
+     font-family: 'Open Sans Light', sans-serif, Arial;
+     font-weight: 200;
+     font-size: 12px;
+     line-height: 1.5;
+     margin-bottom: 30px;
+
+     h2{
+       font-size: 21px;
+       margin-bottom: 10px;
+       color: antiquewhite;
+
+    }
+
+
+
+     .author{
+       text-align: right;
+       margin-right: 10px;
+       margin-top: 8px;
+     }
+
+  }
+}
+
+.request-panel{
+  background: red;
+  padding: 40px 0;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  @include gridle_state( mobile ) {
+    padding: 30px 0;
+  }
+
+
+  h4{
+     @include gridle_grid ( 7 );
+     font-size: 30px;
+
+     @include gridle_state( mobile ) {
+         @include gridle_grid ( 12 );
+         font-size: 20px;
+         margin-bottom: 10px;;
+     }
+  }
+  .request-quote{
+    @include gridle_grid ( 5 );
+
+    @include gridle_state( mobile ) {
+        @include gridle_grid ( 12 );
+    }
+  }
+
+  a{
+    background: white;
+    color: red;
+    border: none;
+    margin-top: 13px;
+  }
+}
+
+.footer{
+  background: #404b53;
+  padding: 45px 0;
+  overflow: hidden;
+  color: white;
+  font-size: 10px;
+  font-weight: 300;
+  // font-family: Verdana;
+
+  ul{
+    li{
+      padding: 3px 0;
+      margin-bottom: 2px;
+      letter-spacing: 1px;
+      a{
+        color: white;
+        text-decoration: none;
+
+        &:hover{
+          border-bottom: 1px solid white;
+          padding-bottom: 2px;
+        }
+
+        // font-family: Verdana;
+      }
+    }
+  }
+
+  h3{
+    color: #8e9dac;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #8e9dac;
+    font-size: 15px;
+    margin-bottom: 10px;
+    width: 80%;
+
+    @include gridle_state( mobile ) {
+      width: 100%;
+
+    }
+
+  }
+  .logo{
+    @include gridle_grid ( 3 );
+    text-align: center;
+
+      @include gridle_state( mobile ) {
+          @include gridle_grid ( 12 );
+          margin-bottom: 20px;
+      }
+    img{
+      width: 60%;
+      @include gridle_state( mobile ) {
+        width: 80%;
+      }
+      margin: 0 auto;
+
+      &.social{
+        width: 40%;
+        margin-top: 20px;
+      }
+
+    }
+  }
+  .products{
+    @include gridle_grid ( 3 );
+
+    @include gridle_state( mobile ) {
+      @include gridle_grid ( 12 );
+      margin-top: 20px;
+    }
+  }
+  .about{
+    @include gridle_grid ( 3 );
+
+    @include gridle_state( mobile ) {
+      @include gridle_grid ( 12 );
+        margin-top: 20px;
+    }
+
+  }
+  .contact{
+    @include gridle_grid ( 3 );
+
+    @include gridle_state( mobile ) {
+      @include gridle_grid ( 12 );
+      margin-top: 20px;
+    }
+  }
+}
+@import 'tablet';
+@import 'mobile';

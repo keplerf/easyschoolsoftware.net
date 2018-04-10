@@ -1,0 +1,19 @@
+
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .header-internal.hot .header-internal-image{
+    background-position: 230% center;
+  }
+  .display-desktop{
+    display: none;
+  }
+
+  .display-mobile{
+    display: block;
+  }
+}
